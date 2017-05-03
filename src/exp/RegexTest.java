@@ -17,6 +17,7 @@ public class RegexTest {
 		Pattern p = Pattern.compile(regex,Pattern.CASE_INSENSITIVE);		
 		Matcher m = p.matcher(str);
 		System.out.println(m.find());
+		// this is a test for GIt branch
 				
 
 	}
