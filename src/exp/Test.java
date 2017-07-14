@@ -1,14 +1,21 @@
 package exp;
 
-import java.util.HashMap;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-
+import java.util.ArrayList;
+import java.util.List;
 
 public class Test {
-	public static void main(String[] args) throws InterruptedException {
-		/*for(int k=1;k<=5;k++){
+	public static void main(String[] args) {
+		List<String> str = new ArrayList();
+		str.add("abc");
+		str.add("b");
+		str.add("e");
+		str.add("f");
+
+	}
+	
+		
+	/*public static void main(String[] args) throws InterruptedException {
+		for(int k=1;k<=5;k++){
 			for( int g=((13*k-k*k-12)/2)+1;g<=((13*(k+1))-((k+1)*(k+1))-12)/2;g++){
 				if(g%2!=0){
 					System.out.print('*');
@@ -17,7 +24,7 @@ public class Test {
 				}
 			}
 			System.out.println();
-		}*/
+		}
 		 for(int k=1;k<=5;k++){
 			 for(int g=k;g<=5;g++){
 				 if((((k==1 || k==2)) && (g)%2==0) || ((k==3 || k==4) && (g+1)%2==0)){
@@ -51,5 +58,5 @@ public class Test {
 		while(m.find())
 			System.out.println(m.group());
 		//System.out.println(m.group());
-	}	
+	}	*/
 }

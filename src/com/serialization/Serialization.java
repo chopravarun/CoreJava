@@ -28,11 +28,11 @@ public class Serialization {
 	}
 	
 	public static void main(String arg[]){
-		Student s = new Student();
+		/*Student s = new Student();
 		s.fname= ("varun");
-		s.lname =("chopra");
+		s.lname =("chopra");*/
 		Serialization ser = new Serialization();
-		ser.writeObejct(s);
+		//ser.writeObejct(s);
 		ser.readObject();
 		
 	}
@@ -40,6 +40,9 @@ public class Serialization {
 
 class Human {
 	String ssn;
+	Human(){
+		System.out.println("humane");
+	}
 	
 }
 
