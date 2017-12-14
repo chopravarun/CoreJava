@@ -16,6 +16,8 @@ import java.util.concurrent.Executors;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import com.multithreading.SeriesPrintInthreads;
+
 public class StockMarket implements Subject{
 	
 	Map<String,String> firmAndPrice;
@@ -26,7 +28,7 @@ public class StockMarket implements Subject{
 		firmAndPrice = new ConcurrentHashMap<String, String>();
 		for(String stock : stockNames){
 			firmAndPrice.put(stock, "");
-		}			
+		}		
 	}
 	
 	@Override

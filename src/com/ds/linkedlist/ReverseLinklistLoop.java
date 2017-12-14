@@ -6,14 +6,17 @@ public class ReverseLinklistLoop extends NodeCreateAndTraverse{
 		Node curr = start;
 		Node next = null;
 		
-		while(curr.next!= null){
+		while(curr!= null){
 			next = curr.next;
 			curr.next = prev;
 			prev = curr;
 			curr = next;
 		}
-					
-		System.out.println(prev);
+		Node tmp = prev;
+		while(tmp!=null){
+			System.out.println(tmp.data);
+			tmp = tmp.next;
+		}
 	}
 	
 	public Node reversePartOfLinklist(Node start,int n){
@@ -75,9 +78,9 @@ public class ReverseLinklistLoop extends NodeCreateAndTraverse{
 		int[] m = new int[]{1,2,3,4,5,6,7,8,9};
 		ReverseLinklistLoop loop = new ReverseLinklistLoop();
 		Node start = loop.createList(m);
-		//loop.reverse(start);
-		Node part = loop.reverserAlternatePart(start, 3,true);
-		loop.traverse(part);
+		loop.reverse(start);
+		//Node part = loop.reverserAlternatePart(start, 3,true);
+		//loop.traverse(part);
 		
 	}
 }

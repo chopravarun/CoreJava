@@ -56,7 +56,8 @@ public class MergeTwoSortedLists extends NodeCreateAndTraverse {
 		MergeTwoSortedLists ob = new MergeTwoSortedLists();
 		Node linka = ob.createList(a);
 		Node linkb = ob.createList(b);
-		
-		ob.mergeSort(linkb);
+		Node nn = ob.mergeTwoLists(linka, linkb);
+		ob.traverse(nn);
+		//ob.mergeSort(linkb);
 	}
 }

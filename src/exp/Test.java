@@ -1,16 +1,24 @@
 package exp;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class Test {
 	public static void main(String[] args) {
-		List<String> str = new ArrayList();
-		str.add("abc");
-		str.add("b");
-		str.add("e");
-		str.add("f");
+		List<String> ss = testtt();
+		System.out.println(ss.size());
 
+	}
+	
+	public static List<String> testtt(){
+		try{
+			List<String> ss = new ArrayList();
+			ss.add("2lk3l2k");
+			return ss;
+		}finally{
+			throw new NullPointerException();
+		}
 	}
 	
 		

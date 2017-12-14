@@ -17,8 +17,8 @@ public class LockAndSync {
 				
 			}
 		};
-		Thread tt1 = new Thread(t1);
-		Thread tt2 = new Thread(t2);
+		Task tt1 = new Task(t1);
+		Task tt2 = new Task(t2);
 		tt1.start();
 		tt2.start();
 		

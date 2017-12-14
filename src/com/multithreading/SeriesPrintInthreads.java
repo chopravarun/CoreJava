@@ -2,12 +2,16 @@ package com.multithreading;
 
 
 public class SeriesPrintInthreads {
+	
+	protected void fun(){
+		
+	}
 	public static void main(String[] args) {
 		Printer p = new Printer();
-		Thread t1 = new Thread(new PrintThread(true, p));
-		Thread t2 = new Thread(new PrintThread(false, p));
+		Task t1 = new Task(new PrintThread(true, p));
+		Task t2 = new Task(new PrintThread(false, p));
 		t1.start();
-		t2.start();
+		t2.start();		
 		while(true){
 			StackTraceElement[] ele = t2.getStackTrace();
 			for(StackTraceElement e : ele){

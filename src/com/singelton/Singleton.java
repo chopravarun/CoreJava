@@ -15,7 +15,7 @@ public class Singleton {
 			@Override
 			public void run() {
 				set.add(SinletonClass.getInstance());
-				System.out.println("getting");
+				//System.out.println("getting");
 				latch.countDown();
 			}
 		};
@@ -25,6 +25,9 @@ public class Singleton {
 		}
 		
 		try {
+			while(latch.getCount()>0){
+				System.out.println("count : "+latch.getCount());
+			}
 			latch.await();
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
@@ -45,11 +48,9 @@ final class SinletonClass implements Serializable{
 		value = "test";
 	}		
 	public static  SinletonClass getInstance(){		
-		synchronized (SinletonClass.class) {
-			if(obj == null){
+		if(obj == null){
 				obj = new SinletonClass();			
-			}					
-		}
+		}							
 		return obj;
 	}	
 	protected Object readResolve(){

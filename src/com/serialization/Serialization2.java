@@ -1,6 +1,5 @@
 package com.serialization;
 
-import java.beans.Transient;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;

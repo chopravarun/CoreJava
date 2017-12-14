@@ -10,7 +10,7 @@ public class NotifyAndWait {
 	}
 }
 
-class Operator extends Thread{
+class Operator extends Task{
 	
 	Machine machine;
 	Operator(Machine m){
@@ -29,7 +29,7 @@ class Operator extends Thread{
 		}			
 	}
 }
-class Machine extends Thread{
+class Machine extends Task{
 	
 	Instruction i = new Instruction();
 	public void addInstruction(Instruction i){

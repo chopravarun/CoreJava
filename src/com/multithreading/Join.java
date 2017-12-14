@@ -8,7 +8,7 @@ public class Join {
 			public void run() {
 				for(int i=0;i<10;i++){
 					System.out.println("I am in thread");
-					Thread tt = Thread.currentThread();
+					Task tt = Task.currentThread();
 					try {
 						tt.sleep(100);
 					} catch (InterruptedException e) {
@@ -20,8 +20,8 @@ public class Join {
 			}
 		};
 		
-		Thread t = new Thread(task);
-		Thread tt = Thread.currentThread();
+		Task t = new Task(task);
+		Task tt = Task.currentThread();
 		t.start();
 		t.join();
 		System.out.println("i am in main");

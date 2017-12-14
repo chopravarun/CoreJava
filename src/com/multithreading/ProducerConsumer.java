@@ -9,8 +9,8 @@ public class ProducerConsumer {
 		Consumer con = new Consumer(out);
 		Producer prod = new Producer(out);
 		
-		Thread consumerThread = new Thread(con);
-		Thread producerThread = new Thread(prod);
+		Task consumerThread = new Task(con);
+		Task producerThread = new Task(prod);
 		
 		consumerThread.start();
 		producerThread.start();
