@@ -8,8 +8,8 @@ import java.util.concurrent.Executors;
 
 public class Singleton {	
 	public static void main(String arg[]){
-		HashSet<SinletonClass> set = new HashSet<SinletonClass>();
-		CountDownLatch latch = new CountDownLatch(10000);
+		final HashSet<SinletonClass> set = new HashSet<SinletonClass>();
+		final CountDownLatch latch = new CountDownLatch(1000);
 		Runnable thread = new Runnable() {
 			
 			@Override
@@ -19,16 +19,14 @@ public class Singleton {
 				latch.countDown();
 			}
 		};
-		ExecutorService serv = Executors.newFixedThreadPool(10000);
-		for(int i=0;i<10000;i++){
+		ExecutorService serv = Executors.newFixedThreadPool(1000);
+		for(int i=0;i<1000;i++){
 			serv.submit(thread);
 		}
 		
-		try {
-			while(latch.getCount()>0){
-				System.out.println("count : "+latch.getCount());
-			}
+		try {			
 			latch.await();
+			System.out.println(latch.getCount());
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -48,9 +46,9 @@ final class SinletonClass implements Serializable{
 		value = "test";
 	}		
 	public static  SinletonClass getInstance(){		
-		if(obj == null){
-				obj = new SinletonClass();			
-		}							
+		if(obj==null)
+			obj = new SinletonClass();			
+									
 		return obj;
 	}	
 	protected Object readResolve(){

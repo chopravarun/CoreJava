@@ -1,5 +1,8 @@
 package exp;
 
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
 import java.util.Map;
 
 public class MethodCallStack {
@@ -21,13 +24,10 @@ public class MethodCallStack {
 	}
 	
 	public void getStack(){
-		for (Map.Entry <Thread, StackTraceElement []> entry: 
-            Thread.getAllStackTraces().entrySet ())
-        {
-            System.out.println (entry.getKey ().getName () + ":");
-            for (StackTraceElement element: entry.getValue ())
-                System.out.println ("\t" + element);
-        }	
+		StackTraceElement[] traces = Thread.currentThread().getStackTrace();
+		for(StackTraceElement trace : traces){
+			System.out.println(trace);
+		}
 	}
 	
 }
